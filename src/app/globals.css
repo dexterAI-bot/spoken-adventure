@@ -24,3 +24,43 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.anim-spotlight {
+  box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7);
+  animation: spotlightPulse 1.2s ease-in-out infinite;
+}
+
+.anim-bounce-soft {
+  animation: bounceSoft 0.8s ease-in-out infinite;
+}
+
+.anim-shake {
+  animation: shakeIt 0.45s ease-in-out infinite;
+}
+
+.anim-sparkles {
+  position: relative;
+  animation: sparklePop 1s ease-in-out infinite;
+}
+
+@keyframes spotlightPulse {
+  0% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.65); }
+  70% { box-shadow: 0 0 0 14px rgba(251, 191, 36, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); }
+}
+
+@keyframes bounceSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes shakeIt {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px) rotate(-1deg); }
+  75% { transform: translateX(2px) rotate(1deg); }
+}
+
+@keyframes sparklePop {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(250, 204, 21, 0)); }
+  50% { filter: drop-shadow(0 0 8px rgba(250, 204, 21, 0.95)); }
+}
